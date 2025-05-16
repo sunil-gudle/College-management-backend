@@ -3,33 +3,30 @@ spring:
     name: restful-service
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-    hikari:
-      pool-name: H2Pool
+    mysql:
+      jdbc-url: jdbc:mysql://localhost:3306/collegedb
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password:
+      hikari:
+        pool-name: MySQLPool
 
+    # Secondary (H2) datasource configuration
+    h2:
+      jdbc-url: jdbc:h2:mem:testdb
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-
-# Secondary (MySQL) datasource configuration
-mysql:
-  datasource:
-    url: jdbc:mysql://localhost:3306/collegedb
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password:
-    hikari:
-      pool-name: MySQLPool
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+---
+# Enable H2 Console
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
+
