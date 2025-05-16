@@ -1,6 +1,6 @@
 spring:
   application:
-    name: restful-service
+    name: College-management-backend
 
   datasource:
     mysql:
