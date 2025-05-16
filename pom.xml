@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dailycoding</groupId>
-	<artifactId>restful-service</artifactId>
+	<artifactId>College-management-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>restful-service</name>
+	<name>College-management-backend</name>
 	<description>Demo project for Spring Boot Restful services with Actuator, Logging logics</description>
 	<url/>
 	<licenses>
