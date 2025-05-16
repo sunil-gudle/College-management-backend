@@ -1,5 +1,6 @@
-package com.dailycoding.restful_service.model;
+package com.dailycoding.restful_service.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,15 +16,14 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
-    private String course;
     private String mobileNo;
 
     // A Student belongs to one Department
     // Student table will have a department_id foreign key referencing the Department table.
     @ManyToOne
+    @JsonBackReference
     private Department department;
 
 }
